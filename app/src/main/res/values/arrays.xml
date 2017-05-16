@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="estabelecimentos">
+        <item>Centro - Severino Cruz</item>
+        <item>Partage Shopping</item>
+        <item>Centro - Irineu Joffily</item>
+        <item>Prata</item>
+        <item>Lauritzen</item>
+        <item>Mirante</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Prefências">
+    <ListPreference
+        android:defaultValue="@string/pref_Estabelecimento_default"
+        android:entries="@array/estabelecimentos"
+        android:entryValues="@array/estabelecimentos"
+        android:key="listPrefEstabelecimento"
+        android:summary="Onde realizar os pedidos"
+        android:title="Estabelecimento" />
+</PreferenceScreen>
