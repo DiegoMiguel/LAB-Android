@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import diegomiguel.lab02.DAO.BDController;
 import diegomiguel.lab02.R;
@@ -23,22 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ArrayList a = Pedido.Salada.getList();
-
-        String s = "";
-        for (int id = 0; id < a.size(); id++){
-            s += a.get(id) + ",";
-        }
-
-        String[] array = s.split(",");
-        String t = "";
-        for (String b :
-                array) {
-            t += b;
-        }
-
-        Toast.makeText(this, t + (a.size()==array.length), Toast.LENGTH_SHORT).show();
     }
 
     public void onClick(View view){
@@ -57,11 +39,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadBD() {
-        BDController bdController = new BDController(this);
+        try {
+            BDController bdController = new BDController(this);
+            Cursor cursor = bdController.getPedido();
+            String[] listSalada = cursor.getString(2).split(",");
 
-        Cursor cursor = bdController.getPedidos();
+            Pedido pedido = new Pedido(cursor.getString(0),
+                    Pedido.Recheio.valueOf(cursor.getString(1).toUpperCase()),
+                    new ArrayList<>(Arrays.asList(listSalada)));
 
-        Toast.makeText(this, Arrays.toString(cursor.getColumnNames()), Toast.LENGTH_SHORT).show();
+            Intent intentRealizarPedido = new Intent(this, PedidoConfirm.class);
+
+            intentRealizarPedido.putExtra("pedido", pedido);
+
+            startActivity(intentRealizarPedido);
+        }catch (Exception e){
+            Toast.makeText(this, "Faça um novo pedido e salve em BD\nAssim, você pode acessá-lo aqui", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void loadPreference() {

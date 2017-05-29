@@ -45,7 +45,7 @@ public class BDController {
         return saladaBD;
     }
 
-    public Cursor getPedidos() {
+    public Cursor getPedido() {
 
         db = bdManager.getReadableDatabase();
 
@@ -55,6 +55,9 @@ public class BDController {
 
         if(cursor!=null){
             cursor.moveToFirst();
+        }
+        else {
+            return null;
         }
         db.close();
         return cursor;

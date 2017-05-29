@@ -63,6 +63,7 @@ public class PedidoConfirm extends AppCompatActivity {
             case R.id.btnNovoPedido:
                 Intent intentNovoPedido = new Intent(this, PedidoActivity.class);
                 startActivity(intentNovoPedido);
+                finish();
                 break;
         }
 

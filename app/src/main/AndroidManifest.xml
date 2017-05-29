@@ -20,14 +20,14 @@
             android:name=".activity.SettingsActivity"
             android:label="@string/title_activity_settings" />
 
-        <receiver
+        <!--receiver
             android:name=".ConnectionReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.net.wifi.STATE_CHANGE" />
             </intent-filter>
-        </receiver>
+        </receiver>-->
 
         <activity android:name=".activity.MainActivity">
             <intent-filter>

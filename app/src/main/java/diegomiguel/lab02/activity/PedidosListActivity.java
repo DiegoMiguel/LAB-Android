@@ -3,10 +3,8 @@ package diegomiguel.lab02.activity;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.SimpleCursorAdapter;
 
 import diegomiguel.lab02.DAO.BDController;
-import diegomiguel.lab02.DAO.BDManager;
 import diegomiguel.lab02.R;
 
 public class PedidosListActivity extends AppCompatActivity {
@@ -18,7 +16,7 @@ public class PedidosListActivity extends AppCompatActivity {
 
         BDController bdController = new BDController(this);
 
-        Cursor cursor = bdController.getPedidos();
+        Cursor cursor = bdController.getPedido();
 
         /*String[] coluna = new String[] {BDManager.colID};
         int[] idViews = new int[] {R.id.idLivro, R.id.nomeLivro};
