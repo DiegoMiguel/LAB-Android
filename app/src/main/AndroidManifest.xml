@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.PedidoActivity"></activity>
+        <activity android:name=".activity.PedidoActivity" />
         <activity
             android:name=".activity.PedidoConfirm"
             android:label="Pedido Feito!" />
@@ -20,14 +20,16 @@
             android:name=".activity.SettingsActivity"
             android:label="@string/title_activity_settings" />
 
-        <!--receiver
+        <!--
+        receiver
             android:name=".ConnectionReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.net.wifi.STATE_CHANGE" />
             </intent-filter>
-        </receiver>-->
+        </receiver>
+        -->
 
         <activity android:name=".activity.MainActivity">
             <intent-filter>
@@ -36,7 +38,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.PedidosListActivity"></activity>
+        <activity android:name=".activity.PedidosListActivity" />
+
+        <activity
+            android:name=".activity.Multimedia"
+            android:label="Seu Momento"></activity>
     </application>
 
 </manifest>

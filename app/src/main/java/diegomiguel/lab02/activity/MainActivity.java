@@ -3,8 +3,8 @@ package diegomiguel.lab02.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
+        Intent intent;
         switch (view.getId()){
             case R.id.btnFavPrefs:
                 loadPreference();
@@ -32,8 +33,13 @@ public class MainActivity extends AppCompatActivity {
                 loadBD();
                 break;
             case R.id.btnNovoPedido:
-                Intent intentNovoPedido = new Intent(this, PedidoActivity.class);
-                startActivity(intentNovoPedido);
+                intent = new Intent(this, PedidoActivity.class);
+                startActivity(intent);
+                break;
+            // Lab 06
+            case R.id.btnMedia:
+                intent = new Intent(this, Multimedia.class);
+                startActivity(intent);
                 break;
         }
     }
